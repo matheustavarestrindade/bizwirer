@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import NewsArea from "./sub/NewsArea";
 import LoadingIcon from "./sub/LoadingIcon";
-import SEO from './seo/SEO';
+import SEO from "./seo/SEO";
 import { useState, useEffect } from "react";
 
 const NewsPage = () => {
@@ -29,24 +29,34 @@ const NewsPage = () => {
         };
     }, [isLoading]);
 
-
     return (
         <React.Fragment>
-            <SEO type="WebPage" content={{
-                "name": "Ultimas Notícias",
-                "description": "Confira as ultimas notícias dos maiores nomes na reportagem brasileira!",
-                "publisher": {
-                    "@type": "ProfilePage",
-                    "name": "BizWirer"
-                }
-            }} />
+            <SEO
+                type="WebPage"
+                content={{
+                    name: "Ultimas Notícias",
+                    description: "Confira as ultimas notícias dos maiores nomes na reportagem brasileira!",
+                    publisher: {
+                        "@type": "ProfilePage",
+                        name: "BizWirer",
+                    },
+                }}
+            />
             <button
                 className="btn btn-success shadow border"
                 style={{ borderRadius: "999px", padding: "0.8rem", position: "fixed", zIndex: 10, bottom: "15px", right: "15px" }}
                 onClick={() => {
                     setCurrentPage(0);
-                }}>
-                <svg width="1.5rem" height="1.5rem" viewBox="0 0 16 16" className="bi bi-arrow-clockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                }}
+            >
+                <svg
+                    width="1.5rem"
+                    height="1.5rem"
+                    viewBox="0 0 16 16"
+                    className="bi bi-arrow-clockwise"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
                     <path fillRule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
                     <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
                 </svg>
@@ -60,7 +70,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             Todas
                         </button>
                         <button
@@ -68,7 +79,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("Band Economia");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             Band
                         </button>
                         <button
@@ -76,7 +88,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("BBC");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             BBC
                         </button>
                         <button
@@ -84,7 +97,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("Bloomberg Economia");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             Bloomberg
                         </button>
                         <button
@@ -92,15 +106,17 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("Globo Economia");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             G1
                         </button>
                         <button
                             className="p-2 text-muted btn-secondary btn"
                             onClick={() => {
-                                setSource("InfoMoney");
+                                setSource("Info Money");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             InfoMoney
                         </button>
                         <button
@@ -108,7 +124,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("Money Times");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             Money Times
                         </button>
                         <button
@@ -116,7 +133,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("Suno Research");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             Suno Search
                         </button>
                         <button
@@ -124,7 +142,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("UOL Economia");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             UOL
                         </button>
                         <button
@@ -132,7 +151,8 @@ const NewsPage = () => {
                             onClick={() => {
                                 setSource("Veja");
                                 setCurrentPage(0);
-                            }}>
+                            }}
+                        >
                             Veja
                         </button>
                     </nav>
