@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SEO from '../seo/SEO';
+import SEO from "../seo/SEO";
 
 const NewsCard = ({ content, date, link, source, views, image_url }) => {
     const [cardStyle, setCardStyle] = useState(cardCustomStyle);
@@ -27,51 +27,49 @@ const NewsCard = ({ content, date, link, source, views, image_url }) => {
             )}
             <div className="card-header text-center">
                 <img src={`./assets/images/${getLogoName(source)}`} alt={`Logo ${source}`} style={cardImageStyle} />
-                <SEO type="ImageObject" content={{
-                    "author": source,
-                    "contentUrl": `./assets/images/${getLogoName(source)}`,
-                    "description": `Logo ${source}`,
-                    "name": `Logo ${source}`
-                }} />
-                <span>
-                    {source}
-                </span>
+                <SEO
+                    type="ImageObject"
+                    content={{
+                        author: source,
+                        contentUrl: `./assets/images/${getLogoName(source)}`,
+                        description: `Logo ${source}`,
+                        name: `Logo ${source}`,
+                    }}
+                />
+                <span>{source}</span>
             </div>
             <div className={"card-body " + (isNew ? "text-success font-weight-bold" : "text-secondary")}>
                 <p className="card-text">{content}</p>
                 <small>
-                    <span>
-                        {time}
-                    </span>
-                     | {views} Visualizações
+                    <span>{time}</span>| {views} Visualizações
                 </small>
             </div>
 
-            <SEO type="NewsArticle" content={{
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://example.com/my-news-article"
-                },
-                "headline": content,
-                "datePublished": date,
-                "dateModified": date,
-                "author": {
-                    "@type": "Person",
-                    "name": source
-                },
-                "image": [
-                    (image_url && image_url !== "null") ? image_url : `https://bizwirer.com/assets/images/${getLogoName(source)}`,
-                ],
-                "publisher": {
-                    "@type": "Organization",
-                    "name": source,
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": `./assets/images/${getLogoName(source)}`,
-                    }
-                }
-            }} />
-
+            <SEO
+                type="NewsArticle"
+                content={{
+                    mainEntityOfPage: {
+                        "@type": "WebPage",
+                        "@id": "https://example.com/my-news-article",
+                    },
+                    headline: content,
+                    datePublished: date,
+                    dateModified: date,
+                    author: {
+                        "@type": "Person",
+                        name: source,
+                    },
+                    image: [image_url && image_url !== "null" ? image_url : `https://bizwirer.com/assets/images/${getLogoName(source)}`],
+                    publisher: {
+                        "@type": "Organization",
+                        name: source,
+                        logo: {
+                            "@type": "ImageObject",
+                            url: `./assets/images/${getLogoName(source)}`,
+                        },
+                    },
+                }}
+            />
         </a>
     );
 };
@@ -117,9 +115,10 @@ function getLogoName(key) {
         return "bloomberg.png";
     } else if (key === "Money Times") {
         return "moneytimes.png";
+    } else if (key === "CNN Business") {
+        return "cnn.png";
     }
 }
-
 
 function isNewsNew(date) {
     if (!date) {

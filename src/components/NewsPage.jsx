@@ -155,6 +155,15 @@ const NewsPage = () => {
                         >
                             Veja
                         </button>
+                        <button
+                            className="p-2 text-muted btn-secondary btn"
+                            onClick={() => {
+                                setSource("CNN Business");
+                                setCurrentPage(0);
+                            }}
+                        >
+                            CNN Business
+                        </button>
                     </nav>
                 </div>
                 <div className="card p-5 mb-4 rounded">
