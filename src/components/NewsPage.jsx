@@ -77,6 +77,15 @@ const NewsPage = () => {
                         <button
                             className="p-2 text-muted btn-secondary btn"
                             onClick={() => {
+                                setSource("ADVFN");
+                                setCurrentPage(0);
+                            }}
+                        >
+                            ADVFN
+                        </button>
+                        <button
+                            className="p-2 text-muted btn-secondary btn"
+                            onClick={() => {
                                 setSource("Band Economia");
                                 setCurrentPage(0);
                             }}
@@ -100,6 +109,15 @@ const NewsPage = () => {
                             }}
                         >
                             Bloomberg
+                        </button>
+                        <button
+                            className="p-2 text-muted btn-secondary btn"
+                            onClick={() => {
+                                setSource("CNN Business");
+                                setCurrentPage(0);
+                            }}
+                        >
+                            CNN Business
                         </button>
                         <button
                             className="p-2 text-muted btn-secondary btn"
@@ -154,15 +172,6 @@ const NewsPage = () => {
                             }}
                         >
                             Veja
-                        </button>
-                        <button
-                            className="p-2 text-muted btn-secondary btn"
-                            onClick={() => {
-                                setSource("CNN Business");
-                                setCurrentPage(0);
-                            }}
-                        >
-                            CNN Business
                         </button>
                     </nav>
                 </div>

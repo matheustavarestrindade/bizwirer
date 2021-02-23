@@ -6,6 +6,10 @@ const NewsCard = ({ content, date, link, source, views, image_url }) => {
     const time = `Há ${getTime(new Date(date))}`;
     const isNew = isNewsNew(new Date(date));
 
+    if (source === "CNN Business") {
+        link = "http://cnnbrasil.com.br/" + link;
+    }
+
     return (
         <a
             href={link}
@@ -117,7 +121,11 @@ function getLogoName(key) {
         return "moneytimes.png";
     } else if (key === "CNN Business") {
         return "cnn.png";
+    } else if (key === "ADVFN") {
+        return "advfn.png";
     }
+
+    return "";
 }
 
 function isNewsNew(date) {
